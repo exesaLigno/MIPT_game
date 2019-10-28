@@ -1,7 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
 
-#include "classes.h"
+#include "classes/objects.h"
+#include "classes/game.h"
 
 
 using namespace sf;
@@ -56,12 +57,12 @@ int main(const int argc, const char** argv)
         if (Keyboard::isKeyPressed(Keyboard::S)) 
             player.move(0, 0.1*time); 
             
-        if (abs(player.getPosition().x - 400) < 50 and abs(player.getPosition().y - 100) < 50)
-        {
-        	printf("You near the enemy!\n");
-       	}
-       	else
-       		printf("\n");
+//        if (abs(player.getPosition().x - 400) < 50 and abs(player.getPosition().y - 100) < 50)
+//        {
+//        	printf("You near the enemy!\n");
+//       	}
+//       	else
+//       		printf("\n");
        		
        	
         window.clear();
