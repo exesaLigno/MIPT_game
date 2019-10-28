@@ -6,7 +6,7 @@
 class Game
 {
 protected:
-	sf::RenderWindow window;
+	sf::RenderWindow* window;
 	Enemy* enemies;
 	
 public:
@@ -14,4 +14,5 @@ public:
 	~Game();
 	void update();
 	void renderFrame();
+	void start();
 };
