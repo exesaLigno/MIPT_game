@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=main.cpp classes.cpp
+SOURCES=main.cpp object.cpp enemy.cpp position.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=app.out
 

@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
 
+#include "classes.h"
+
 
 using namespace sf;
 
@@ -16,18 +18,21 @@ int main(const int argc, const char** argv)
         H = atoi(argv[1]);
         W = atoi(argv[2]);
     }
-    RenderWindow window(VideoMode(H, W), "GAME");
+    RenderWindow window(VideoMode(H, W), "GAME", Style::Fullscreen);
     
-    Texture herotexture;
-    herotexture.loadFromFile("Textures/Hero.png");
-    Sprite herosprite;
-    herosprite.setTexture(herotexture);
-    herosprite.setPosition(250,250);
-    
-	Sprite strangersprite;
-	strangersprite.setTexture(herotexture);
-	strangersprite.setPosition(400, 100);
-	strangersprite.setColor(Color::Red);
+//    Texture herotexture;
+//    herotexture.loadFromFile("Textures/Hero.png");
+//    Sprite herosprite;
+//    herosprite.setTexture(herotexture);
+//    herosprite.setPosition(250,250);
+//    
+//	Sprite strangersprite;
+//	strangersprite.setTexture(herotexture);
+//	strangersprite.setPosition(400, 100);
+//	strangersprite.setColor(Color::Red);
+
+	Enemy player(250, 250, 0, "Textures/Hero.png", 5, 5, 10);
+	Enemy enemy(300, 400, 0, "Textures/Hero.old.png", 5, 5, 10);
  
     while (window.isOpen())
     {
@@ -43,15 +48,15 @@ int main(const int argc, const char** argv)
         }
         
         if (Keyboard::isKeyPressed(Keyboard::A)) 
-            herosprite.move(-0.1*time, 0);
+            player.move(-0.1*time, 0);
         if (Keyboard::isKeyPressed(Keyboard::D)) 
-            herosprite.move(0.1*time, 0);
+            player.move(0.1*time, 0);
         if (Keyboard::isKeyPressed(Keyboard::W)) 
-            herosprite.move(0, -0.1*time);
+            player.move(0, -0.1*time);
         if (Keyboard::isKeyPressed(Keyboard::S)) 
-            herosprite.move(0, 0.1*time); 
+            player.move(0, 0.1*time); 
             
-        if (abs(herosprite.getPosition().x - 400) < 50 and abs(herosprite.getPosition().y - 100) < 50)
+        if (abs(player.getPosition().x - 400) < 50 and abs(player.getPosition().y - 100) < 50)
         {
         	printf("You near the enemy!\n");
        	}
@@ -60,8 +65,6 @@ int main(const int argc, const char** argv)
        		
        	
         window.clear();
-        window.draw(herosprite);
-        window.draw(strangersprite);
         window.display();
     }
  

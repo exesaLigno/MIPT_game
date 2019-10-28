@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
+
 class Position
 {
 public:
@@ -20,7 +21,9 @@ public:
 class Object
 {
 protected:
-	Position position;
+	float x;
+	float y;
+	double rotation;
 	
 public:
 	Object(float x, float y, double rotation);
@@ -47,8 +50,9 @@ protected:
 	float health;
 	
 public:
-	Enemy();
+	Enemy(float x, float y, double rotation, const char* texture_name, float speed_normal, float speed_maximum, float health);
 	~Enemy();
+	int update();
 };
 
 
