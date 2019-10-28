@@ -70,4 +70,3 @@ class Camera : public Object
 };
 
 
-
