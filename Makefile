@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=main.cpp object.cpp enemy.cpp position.cpp
+SOURCES=main.cpp classes/object.cpp classes/enemy.cpp classes/position.cpp classes/game.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=app.out
 
@@ -15,7 +15,7 @@ $(EXECUTABLE): $(OBJECTS)
 	
 .PHONY: clean
 clean:
-	rm -rf *.o app.out
+	rm -rf *.o classes/*.o app.out
 	
 .PHONY: run
 run:
