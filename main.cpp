@@ -10,6 +10,27 @@ using namespace sf;
  
 int main(const int argc, const char** argv)
 {
+	int H = 400;
+    int W = 400;
+
+    if (argc == 3)
+    {
+        H = atoi(argv[1]);
+        W = atoi(argv[2]);
+    }
+    
+    Game game(1, H, W, Style::Fullscreen);
+    
+    game.start();
+    
+    return 0;
+    
+}
+
+ 
+/*
+int main(const int argc, const char** argv)
+{
 	Clock clock;
     int H = 400;
     int W = 400;
@@ -71,6 +92,8 @@ int main(const int argc, const char** argv)
  
     return 0;
 }
+
+*/
 
 
 
